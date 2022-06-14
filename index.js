@@ -9,7 +9,7 @@
 
 //3. Clicking inside .hamburger-menu should NOT close it.
 
-//4. Pressing Escape key shoudl close menu and focus button.hamburger-btn
+//4. Pressing Escape key should close menu and focus button.hamburger-btn
 
 //5. When menu is open, aria-expanded is set to true on button.hamburger-btn, and false when closed. 
 
@@ -17,29 +17,25 @@ var menu = document.querySelector('.menu')
 var icon = document.querySelector('.hamburger-btn')
 var mainMenu = document.querySelector('.hamburger-menu')
 
-// function launchHam() {
-//     showMenu.classList.add('show-menu')
-//     showMenu.focus()
-//     hamBtn.setAttribute('aria-expanded', true)
-// }
-
-// function closeHam() {
-//     showMenu.classList.remove('show-menu')
-//     showMenu.focus()
-//     hamBtn.removeAttribute('aria-expanded', false)
-// }
-
-function launcMenu() {
+function launchMenu() {
     if (mainMenu.classList.contains('show-menu')) {
         mainMenu.classList.remove('show-menu')
         icon.style.display = 'block'
+        icon.getAttribute('aria-expanded', true)
+        
     } else {
         mainMenu.classList.add('show-menu') 
         icon.style.display = 'none'
+        icon.removeAttribute('aria-expanded', false)
     }
 }
 
-menu.addEventListener('click', launcMenu)
+menu.addEventListener('click', launchMenu)
+
+menu.onclick = function(e) {
+    if (mainMenu.contains(e.target)) 
+        launchMenu()
+}
 
 
 
