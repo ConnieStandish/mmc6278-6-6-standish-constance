@@ -12,3 +12,8 @@
 //4. Pressing Escape key shoudl close menu and focus button.hamburger-btn
 
 //5. When menu is open, aria-expanded is set to true on button.hamburger-btn, and false when closed. 
+
+var hamMenu = document.querySelector('.menu')
+var hamBtn = document.querySelector('.hamburger-btn button')
+var showMenu = document.querySelector('.hamburger-menu')
+var closeMenu = document.querySelector('#main-menu')
