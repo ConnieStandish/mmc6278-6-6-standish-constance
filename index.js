@@ -13,21 +13,34 @@
 
 //5. When menu is open, aria-expanded is set to true on button.hamburger-btn, and false when closed. 
 
-var hamMenu = document.querySelector('.menu')
-var hamBtn = document.querySelector('.hamburger-btn button')
-var showMenu = document.querySelector('.hamburger-menu')
-var closeMenu = document.querySelector('#main-menu')
+var menu = document.querySelector('.menu')
+var icon = document.querySelector('.hamburger-btn')
+var mainMenu = document.querySelector('.hamburger-menu')
 
-function launchHam() {
-    showMenu.classList.toggle('show-menu')
-    showMenu.focus()
-    hamBtn.setAttribute('aria-expanded', true)
+// function launchHam() {
+//     showMenu.classList.add('show-menu')
+//     showMenu.focus()
+//     hamBtn.setAttribute('aria-expanded', true)
+// }
+
+// function closeHam() {
+//     showMenu.classList.remove('show-menu')
+//     showMenu.focus()
+//     hamBtn.removeAttribute('aria-expanded', false)
+// }
+
+function launcMenu() {
+    if (mainMenu.classList.contains('show-menu')) {
+        mainMenu.classList.remove('show-menu')
+        icon.style.display = 'block'
+    } else {
+        mainMenu.classList.add('show-menu') 
+        icon.style.display = 'none'
+    }
 }
 
-function closeHam() {
-    showMenu.classList.remove('show-menu')
-    showMenu.focus()
-    hamBtn.removeAttribute('aria-expanded', false)
-}
+menu.addEventListener('click', launcMenu)
+
+
 
 
