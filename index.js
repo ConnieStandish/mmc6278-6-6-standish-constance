@@ -17,3 +17,17 @@ var hamMenu = document.querySelector('.menu')
 var hamBtn = document.querySelector('.hamburger-btn button')
 var showMenu = document.querySelector('.hamburger-menu')
 var closeMenu = document.querySelector('#main-menu')
+
+function launchHam() {
+    showMenu.classList.toggle('show-menu')
+    showMenu.focus()
+    hamBtn.setAttribute('aria-expanded', true)
+}
+
+function closeHam() {
+    showMenu.classList.remove('show-menu')
+    showMenu.focus()
+    hamBtn.removeAttribute('aria-expanded', false)
+}
+
+
