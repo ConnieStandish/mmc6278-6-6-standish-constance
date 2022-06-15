@@ -21,13 +21,17 @@ function launchMenu() {
     if (mainMenu.classList.contains('show-menu')) {
         mainMenu.classList.remove('show-menu')
         icon.style.display = 'block'
-        icon.getAttribute('aria-expanded', true)
+        menu.removeAttribute('aria-expanded')
+        icon.setAttribute('aria-expanded', true)
         
     } else {
         mainMenu.classList.add('show-menu') 
         icon.style.display = 'none'
-        icon.removeAttribute('aria-expanded', false)
+        icon.focus()
+        menu.setAttribute('aria-expanded', true)
+        icon.removeAttribute('aria-expanded')
     }
+    
 }
 
 menu.addEventListener('click', launchMenu)
