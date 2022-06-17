@@ -16,6 +16,10 @@
 var menu = document.querySelector('.menu')
 var icon = document.querySelector('.hamburger-btn')
 var mainMenu = document.querySelector('.hamburger-menu')
+var bannerImg = document.querySelector('.banner')
+var main = document.querySelector('main')
+var section = document.querySelector('section')
+var footer = document.querySelector('footer')
 
 function launchMenu() {
     if (mainMenu.classList.contains('show-menu')) {
@@ -25,7 +29,6 @@ function launchMenu() {
         
     } else {
         mainMenu.classList.add('show-menu') 
-        icon.focus()
         icon.ariaExpanded = 'true'
     }
 }
@@ -35,7 +38,10 @@ menu.addEventListener('click', launchMenu)
 menu.onclick = function(e) {
     if (mainMenu.contains(e.target)) 
         launchMenu()
+ 
 }
+
+
 
 
 
