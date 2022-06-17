@@ -24,7 +24,7 @@ var footer = document.querySelector('footer')
 function launchMenu() {
     if (mainMenu.classList.contains('show-menu')) {
         mainMenu.classList.remove('show-menu')
-        icon.style.display = 'block'
+        // icon.style.display = 'block'
         icon.ariaExpanded = 'false'
         
     } else {
@@ -38,8 +38,10 @@ menu.addEventListener('click', launchMenu)
 menu.onclick = function(e) {
     if (mainMenu.contains(e.target)) 
         launchMenu()
- 
 }
+
+
+
 
 
 
