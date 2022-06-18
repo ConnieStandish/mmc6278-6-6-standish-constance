@@ -21,10 +21,13 @@ var main = document.querySelector('main')
 var section = document.querySelector('section')
 var footer = document.querySelector('footer')
 
+function closeMenu() {
+    mainMenu.classList.remove('show-menu')
+}
+
 function launchMenu() {
     if (mainMenu.classList.contains('show-menu')) {
-        mainMenu.classList.remove('show-menu')
-        // icon.style.display = 'block'
+        closeMenu()
         icon.ariaExpanded = 'false'
         
     } else {
@@ -33,18 +36,28 @@ function launchMenu() {
     }
 }
 
-icon.addEventListener('click', launchMenu)
+icon.onclick = launchMenu
 
-icon.onclick = function(e) {
-    if (mainMenu.contains(e.target)) 
-        launchMenu()
-}
+// icon.onclick = function(e) {
+//     if (mainMenu.contains(e.target)) 
+//         launchMenu()
+// }
 
 // window.onclick = function(e) {
 //     if (!menu.contains(e.target)) {
 //         mainMenu.style.display = 'none'
 //     }
 // }
+
+
+
+document.onkeyup = function(e) {
+    if (e.key === 'Escape')
+    closeMenu()
+    icon.focus()
+}
+
+
 
 
 
