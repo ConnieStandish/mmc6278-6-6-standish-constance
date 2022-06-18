@@ -33,12 +33,18 @@ function launchMenu() {
     }
 }
 
-menu.addEventListener('click', launchMenu)
+icon.addEventListener('click', launchMenu)
 
-menu.onclick = function(e) {
+icon.onclick = function(e) {
     if (mainMenu.contains(e.target)) 
         launchMenu()
 }
+
+// window.onclick = function(e) {
+//     if (!menu.contains(e.target)) {
+//         mainMenu.style.display = 'none'
+//     }
+// }
 
 
 
