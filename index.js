@@ -43,11 +43,11 @@ icon.onclick = launchMenu
 //         launchMenu()
 // }
 
-// window.onclick = function(e) {
-//     if (!menu.contains(e.target)) {
-//         mainMenu.style.display = 'none'
-//     }
-// }
+document.body.onclick = function(e) {
+    if (!menu.contains(e.target)) {
+        closeMenu()
+    }
+}
 
 
 
